@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网站管理后台 - 中科同志科技</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Microsoft YaHei', sans-serif; padding: 20px; background: #f5f5f5; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        h1 { color: #0056B3; margin-bottom: 30px; }
+        .admin-panel { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .section { margin-bottom: 30px; }
+        .section h2 { color: #333; margin-bottom: 15px; border-bottom: 2px solid #0056B3; padding-bottom: 10px; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; font-weight: 600; color: #333; }
+        input, textarea, select { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px; }
+        textarea { min-height: 200px; resize: vertical; }
+        button { background: #0056B3; color: white; padding: 12px 30px; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; }
+        button:hover { background: #004494; }
+        .file-list { list-style: none; }
+        .file-list li { padding: 10px; border: 1px solid #e0e0e0; margin-bottom: 10px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; }
+        .file-list li:hover { background: #f9f9f9; }
+        .btn-sm { padding: 5px 15px; font-size: 14px; }
+        .success { background: #4CAF50; color: white; padding: 10px; border-radius: 4px; margin-bottom: 20px; display: none; }
+        .info { background: #e3f2fd; color: #1976D2; padding: 15px; border-radius: 4px; margin-bottom: 20px; }
+        .info code { background: #fff; padding: 2px 6px; border-radius: 3px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔧 网站内容管理后台</h1>
+        
+        <div class="admin-panel">
+            <div class="success" id="success-msg">✅ 保存成功！</div>
+            
+            <div class="info">
+                <strong>使用说明：</strong>
+                <p>1. 选择要编辑的文件，修改内容后点击"保存"</p>
+                <p>2. 新闻数据保存在 <code>admin/news.json</code></p>
+                <p>3. 修改后请在远程桌面中刷新网站查看效果</p>
+                <p>4. 此后台运行在服务器上，直接修改本地文件</p>
+            </div>
+
+            <div class="section">
+                <h2>📰 新闻动态管理</h2>
+                <div class="form-group">
+                    <label>新闻数据文件 (admin/news.json)</label>
+                    <textarea id="news-content" placeholder="加载中..."></textarea>
+                </div>
+                <button onclick="saveNews()">💾 保存新闻数据</button>
+            </div>
+
+            <div class="section">
+                <h2>📄 快速编辑页面</h2>
+                <ul class="file-list">
+                    <li>
+                        <span>首页 (index.html)</span>
+                        <button class="btn-sm" onclick="editFile('index.html')">编辑</button>
+                    </li>
+                    <li>
+                        <span>关于我们 (about/index.html)</span>
+                        <button class="btn-sm" onclick="editFile('about/index.html')">编辑</button>
+                    </li>
+                    <li>
+                        <span>产品中心 (products/index.html)</span>
+                        <button class="btn-sm" onclick="editFile('products/index.html')">编辑</button>
+                    </li>
+                    <li>
+                        <span>新闻动态 (news/index.html)</span>
+                        <button class="btn-sm" onclick="editFile('news/index.html')">编辑</button>
+                    </li>
+                    <li>
+                        <span>联系我们 (contact/index.html)</span>
+                        <button class="btn-sm" onclick="editFile('contact/index.html')">编辑</button>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>📋 操作指南</h2>
+                <div class="info">
+                    <strong>添加新闻步骤：</strong>
+                    <ol style="margin-left: 20px; margin-top: 10px;">
+                        <li>在上方"新闻数据文件"文本框中编辑 JSON</li>
+                        <li>点击"保存新闻数据"</li>
+                        <li>刷新网站首页查看效果</li>
+                    </ol>
+                    <p style="margin-top: 10px;"><strong>JSON 格式示例：</strong></p>
+                    <pre style="background: #f5f5f5; padding: 10px; margin-top: 5px; overflow-x: auto;">[
+  {
+    "title": "新闻标题",
+    "date": "2026-03-12",
+    "category": "行业动态",
+    "excerpt": "新闻摘要...",
+    "author": "编辑部",
+    "views": 1000
+  }
+]</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 加载新闻数据
+        fetch('news.json')
+            .then(r => r.json())
+            .then(data => {
+                document.getElementById('news-content').value = JSON.stringify(data, null, 2);
+            })
+            .catch(e => {
+                document.getElementById('news-content').value = '[]';
+            });
+
+        // 保存新闻数据
+        function saveNews() {
+            const content = document.getElementById('news-content').value;
+            const blob = new Blob([content], {type: 'application/json'});
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'news.json';
+            a.click();
+            
+            // 显示成功提示
+            document.getElementById('success-msg').style.display = 'block';
+            setTimeout(() => {
+                document.getElementById('success-msg').style.display = 'none';
+            }, 3000);
+        }
+
+        // 编辑文件（提示用户）
+        function editFile(filename) {
+            alert('请在服务器 (C:\\inetpub\\wwwroot\\' + filename + ') 中用记事本编辑此文件。\n\n或者：\n1. 在 GitHub 仓库中编辑\n2. 推送后自动同步到服务器');
+        }
+    </script>
+</body>
+</html>
