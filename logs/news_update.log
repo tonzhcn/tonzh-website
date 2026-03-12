@@ -1,0 +1,30 @@
+开始执行新闻自动更新 - 2026-03-12 20:00:01.322792
+
+处理栏目：行业动态
+  - 搜索关键词：IGBT 封装
+搜索失败 IGBT 封装: Command 'curl -s "https://searx.be/search?q=IGBT 封装+2026&language=zh-CN&category=news" 2>/dev/null' timed out after 10 seconds
+    ✓ 生成新闻：IGBT 封装最新进展 - XXXX 公司发布新技术...
+  - 搜索关键词：功率半导体封装
+搜索失败 功率半导体封装: Command 'curl -s "https://searx.be/search?q=功率半导体封装+2026&language=zh-CN&category=news" 2>/dev/null' timed out after 10 seconds
+    ✓ 生成新闻：功率半导体封装最新进展 - XXXX 公司发布新技术...
+
+处理栏目：技术动态
+  - 搜索关键词：TCB 热压键合
+搜索失败 TCB 热压键合: Command 'curl -s "https://searx.be/search?q=TCB 热压键合+2026&language=zh-CN&category=news" 2>/dev/null' timed out after 10 seconds
+    ✓ 生成新闻：TCB 热压键合最新进展 - XXXX 公司发布新技术...
+  - 搜索关键词：银烧结工艺
+搜索失败 银烧结工艺: Command 'curl -s "https://searx.be/search?q=银烧结工艺+2026&language=zh-CN&category=news" 2>/dev/null' timed out after 10 seconds
+    ✓ 生成新闻：银烧结工艺最新进展 - XXXX 公司发布新技术...
+
+✓ 新闻更新完成，共 10 条新闻
+新闻文件：/home/admin/.openclaw/workspace/tonzh-website/admin/news.json
+
+开始同步到服务器...
+Traceback (most recent call last):
+  File "scripts/news_auto_update.py", line 251, in <module>
+    main()
+  File "scripts/news_auto_update.py", line 244, in main
+    result = subprocess.run(['bash', sync_script], capture_output=True, text=True)
+  File "/usr/lib64/python3.6/subprocess.py", line 423, in run
+    with Popen(*popenargs, **kwargs) as process:
+TypeError: __init__() got an unexpected keyword argument 'capture_output'
