@@ -13,17 +13,9 @@
             padding: 120px 0 80px;
             text-align: center;
         }
-        .page-header h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-        .page-header p {
-            font-size: 20px;
-            opacity: 0.9;
-        }
-        .news-section {
-            padding: 80px 0;
-        }
+        .page-header h1 { font-size: 48px; margin-bottom: 20px; }
+        .page-header p { font-size: 20px; opacity: 0.9; }
+        .news-section { padding: 80px 0; }
         .news-filter {
             display: flex;
             justify-content: center;
@@ -40,15 +32,12 @@
             cursor: pointer;
             transition: all 0.3s;
         }
-        .filter-btn.active,
-        .filter-btn:hover {
+        .filter-btn:hover,
+        .filter-btn.active {
             background: #0056B3;
             color: white;
         }
-        .news-list {
-            max-width: 900px;
-            margin: 0 auto;
-        }
+        .news-list { max-width: 900px; margin: 0 auto; }
         .news-item {
             display: flex;
             gap: 30px;
@@ -56,9 +45,7 @@
             border-bottom: 1px solid #e0e0e0;
             transition: all 0.3s;
         }
-        .news-item:hover {
-            background: #f5f5f5;
-        }
+        .news-item:hover { background: #f5f5f5; }
         .news-item-image {
             width: 200px;
             height: 140px;
@@ -71,9 +58,7 @@
             font-size: 48px;
             flex-shrink: 0;
         }
-        .news-item-content {
-            flex: 1;
-        }
+        .news-item-content { flex: 1; }
         .news-category {
             display: inline-block;
             padding: 4px 12px;
@@ -106,26 +91,10 @@
             margin-top: 10px;
             display: inline-block;
         }
-        .pagination {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 50px;
-        }
-        .page-btn {
-            padding: 10px 20px;
-            border: 1px solid #e0e0e0;
-            background: white;
-            color: #333;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        .page-btn:hover,
-        .page-btn.active {
-            background: #0056B3;
-            color: white;
-            border-color: #0056B3;
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #999;
         }
     </style>
 </head>
@@ -161,96 +130,17 @@
         <div class="container">
             <!-- 筛选器 -->
             <div class="news-filter">
-                <button class="filter-btn active">全部</button>
-                <button class="filter-btn">行业动态</button>
-                <button class="filter-btn">技术动态</button>
-                <button class="filter-btn">公司新闻</button>
+                <button class="filter-btn active" onclick="filterNews('all')">全部</button>
+                <button class="filter-btn" onclick="filterNews('行业动态')">行业动态</button>
+                <button class="filter-btn" onclick="filterNews('技术动态')">技术动态</button>
+                <button class="filter-btn" onclick="filterNews('公司新闻')">公司新闻</button>
             </div>
 
             <!-- 新闻列表 -->
-            <div class="news-list" id="news-list-full">
-                <!-- 新闻项 1 -->
-                <article class="news-item">
-                    <div class="news-item-image">📰</div>
-                    <div class="news-item-content">
-                        <span class="news-category">行业动态</span>
-                        <h3 class="news-item-title">半导体封装设备市场持续增长，国产替代加速</h3>
-                        <p class="news-item-excerpt">2026 年全球半导体封装设备市场规模预计突破 100 亿美元，中国市场需求旺盛，国产设备厂商迎来发展机遇...</p>
-                        <div class="news-item-meta">
-                            <span>📅 2026-03-10</span>
-                            <span>👁️ 1,280 阅读</span>
-                        </div>
-                        <a href="#" class="news-item-link">阅读全文 →</a>
-                    </div>
-                </article>
-
-                <!-- 新闻项 2 -->
-                <article class="news-item">
-                    <div class="news-item-image">🔬</div>
-                    <div class="news-item-content">
-                        <span class="news-category">技术动态</span>
-                        <h3 class="news-item-title">纳米银烧结技术取得突破，可靠性提升 50%</h3>
-                        <p class="news-item-excerpt">中科同志研发团队在纳米银烧结工艺上取得重大进展，烧结层剪切强度提升至 80MPa，为车规级功率模块封装提供新方案...</p>
-                        <div class="news-item-meta">
-                            <span>📅 2026-03-08</span>
-                            <span>👁️ 956 阅读</span>
-                        </div>
-                        <a href="#" class="news-item-link">阅读全文 →</a>
-                    </div>
-                </article>
-
-                <!-- 新闻项 3 -->
-                <article class="news-item">
-                    <div class="news-item-image">🏆</div>
-                    <div class="news-item-content">
-                        <span class="news-category">公司新闻</span>
-                        <h3 class="news-item-title">TORCH 荣获 2026 年度半导体创新企业奖</h3>
-                        <p class="news-item-excerpt">在第十二届中国半导体行业协会年会上，中科同志科技凭借技术创新和市场表现荣获年度创新企业奖...</p>
-                        <div class="news-item-meta">
-                            <span>📅 2026-03-05</span>
-                            <span>👁️ 2,103 阅读</span>
-                        </div>
-                        <a href="#" class="news-item-link">阅读全文 →</a>
-                    </div>
-                </article>
-
-                <!-- 新闻项 4 -->
-                <article class="news-item">
-                    <div class="news-item-image">📰</div>
-                    <div class="news-item-content">
-                        <span class="news-category">行业动态</span>
-                        <h3 class="news-item-title">SiC 功率器件封装技术发展趋势分析</h3>
-                        <p class="news-item-excerpt">随着新能源汽车、光伏逆变器等应用需求增长，SiC 功率器件封装技术面临新的挑战与机遇...</p>
-                        <div class="news-item-meta">
-                            <span>📅 2026-03-01</span>
-                            <span>👁️ 1,567 阅读</span>
-                        </div>
-                        <a href="#" class="news-item-link">阅读全文 →</a>
-                    </div>
-                </article>
-
-                <!-- 新闻项 5 -->
-                <article class="news-item">
-                    <div class="news-item-image">🔬</div>
-                    <div class="news-item-content">
-                        <span class="news-category">技术动态</span>
-                        <h3 class="news-item-title">真空焊接空洞控制技术白皮书发布</h3>
-                        <p class="news-item-excerpt">中科同志技术团队发布最新白皮书，详细解析真空焊接过程中空洞形成机理及控制方法...</p>
-                        <div class="news-item-meta">
-                            <span>📅 2026-02-28</span>
-                            <span>👁️ 2,345 阅读</span>
-                        </div>
-                        <a href="#" class="news-item-link">阅读全文 →</a>
-                    </div>
-                </article>
-            </div>
-
-            <!-- 分页 -->
-            <div class="pagination">
-                <button class="page-btn active">1</button>
-                <button class="page-btn">2</button>
-                <button class="page-btn">3</button>
-                <button class="page-btn">下一页</button>
+            <div class="news-list" id="news-list">
+                <div class="empty-state">
+                    <p>加载中...</p>
+                </div>
             </div>
         </div>
     </section>
@@ -288,5 +178,64 @@
     </footer>
 
     <script src="/js/main.js"></script>
+    <script>
+        let allNews = [];
+        let currentFilter = 'all';
+
+        // 加载新闻
+        function loadNews() {
+            const timestamp = new Date().getTime();
+            fetch('/admin/news.json?t=' + timestamp)
+                .then(r => r.json())
+                .then(news => {
+                    allNews = news;
+                    renderNews();
+                })
+                .catch(e => {
+                    document.getElementById('news-list').innerHTML = '<div class="empty-state"><p>加载失败，请稍后重试</p></div>';
+                    console.error('加载新闻失败:', e);
+                });
+        }
+
+        // 渲染新闻
+        function renderNews() {
+            const container = document.getElementById('news-list');
+            const filtered = currentFilter === 'all' 
+                ? allNews 
+                : allNews.filter(n => n.category === currentFilter);
+
+            if (filtered.length === 0) {
+                container.innerHTML = '<div class="empty-state"><p>暂无新闻</p></div>';
+                return;
+            }
+
+            container.innerHTML = filtered.map(item => `
+                <article class="news-item">
+                    <div class="news-item-image">📰</div>
+                    <div class="news-item-content">
+                        <span class="news-category">${item.category || '行业动态'}</span>
+                        <h3 class="news-item-title">${item.title || '新闻标题'}</h3>
+                        <p class="news-item-excerpt">${item.excerpt || item.content ? (item.excerpt || item.content).substring(0, 150) + '...' : ''}</p>
+                        <div class="news-item-meta">
+                            <span>📅 ${item.date || '2026-03-12'}</span>
+                            <span>👁️ ${item.views || 0} 阅读</span>
+                        </div>
+                    </div>
+                </article>
+            `).join('');
+        }
+
+        // 筛选新闻
+        function filterNews(category) {
+            currentFilter = category;
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.textContent.includes(category) || (category === 'all' && btn.textContent === '全部'));
+            });
+            renderNews();
+        }
+
+        // 页面加载时获取新闻
+        loadNews();
+    </script>
 </body>
 </html>
