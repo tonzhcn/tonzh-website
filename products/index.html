@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="中科同志科技产品中心 - 真空焊接炉、高精密粘片机、纳米银烧结炉等半导体封装设备">
+    <meta name="description" content="中科同志科技产品中心 - 半导体设备、SMT 设备、PCB 设备全系列产品">
+    <meta name="keywords" content="半导体封装设备，真空共晶炉，亚微米贴片机，TCB 热压键合机，SMT 设备，PCB 设备">
     <title>产品中心 - 中科同志科技（TORCH）</title>
     <link rel="stylesheet" href="/css/style.css">
     <style>
@@ -24,92 +25,96 @@
         .products-section {
             padding: 80px 0;
         }
-        .product-filter {
+        .category-nav {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin-bottom: 50px;
+            gap: 20px;
+            margin-bottom: 60px;
             flex-wrap: wrap;
         }
-        .filter-btn {
-            padding: 10px 25px;
-            border: 2px solid #0056B3;
+        .category-tab {
+            padding: 15px 40px;
             background: white;
+            border: 2px solid #0056B3;
             color: #0056B3;
-            border-radius: 25px;
+            border-radius: 8px;
             cursor: pointer;
+            font-size: 18px;
+            font-weight: 600;
             transition: all 0.3s;
         }
-        .filter-btn.active,
-        .filter-btn:hover {
+        .category-tab:hover,
+        .category-tab.active {
             background: #0056B3;
             color: white;
         }
-        .products-grid {
+        .category-section {
+            margin-bottom: 80px;
+        }
+        .category-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #0056B3;
+            margin-bottom: 40px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #0056B3;
+        }
+        .subcategory-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 30px;
+            margin-bottom: 50px;
         }
-        .product-card {
+        .subcategory-card {
             background: white;
             border: 1px solid #e0e0e0;
             border-radius: 8px;
-            overflow: hidden;
+            padding: 30px;
             transition: all 0.3s;
+            cursor: pointer;
         }
-        .product-card:hover {
+        .subcategory-card:hover {
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             transform: translateY(-5px);
+            border-color: #0056B3;
         }
-        .product-image {
-            height: 220px;
-            background: #f5f5f5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            color: #999;
+        .subcategory-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
         }
-        .product-info {
-            padding: 25px;
-        }
-        .product-model {
-            font-size: 14px;
-            color: #D4AF37;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-        .product-title {
+        .subcategory-title {
             font-size: 22px;
             font-weight: 700;
-            margin-bottom: 12px;
             color: #333;
+            margin-bottom: 15px;
         }
-        .product-desc {
+        .product-list {
+            list-style: none;
+            padding: 0;
+        }
+        .product-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
             color: #666;
-            line-height: 1.6;
-            margin-bottom: 20px;
         }
-        .product-features {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 20px;
+        .product-list li:last-child {
+            border-bottom: none;
         }
-        .feature-tag {
+        .product-list li a {
+            color: #0056B3;
+            text-decoration: none;
+        }
+        .product-list li a:hover {
+            text-decoration: underline;
+        }
+        .product-count {
+            display: inline-block;
             padding: 4px 12px;
             background: #f0f0f0;
-            border-radius: 4px;
+            border-radius: 20px;
             font-size: 12px;
             color: #666;
-        }
-        .product-link {
-            display: inline-block;
-            color: #0056B3;
-            font-weight: 600;
-        }
-        .product-link:hover {
-            color: #003366;
+            margin-left: 10px;
         }
         .cta-section {
             background: #f5f5f5;
@@ -123,6 +128,16 @@
         .cta-section p {
             color: #666;
             margin-bottom: 30px;
+        }
+        @media (max-width: 992px) {
+            .subcategory-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 768px) {
+            .subcategory-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -153,112 +168,155 @@
         </div>
     </section>
 
-    <!-- 产品列表 -->
+    <!-- 产品分类 -->
     <section class="products-section">
         <div class="container">
-            <!-- 筛选器 -->
-            <div class="product-filter">
-                <button class="filter-btn active">全部产品</button>
-                <button class="filter-btn">真空焊接炉</button>
-                <button class="filter-btn">贴片机</button>
-                <button class="filter-btn">烧结炉</button>
+            <!-- 一级分类导航 -->
+            <div class="category-nav">
+                <button class="category-tab active" onclick="scrollToCategory('semiconductor')">半导体设备</button>
+                <button class="category-tab" onclick="scrollToCategory('smt')">SMT 设备</button>
+                <button class="category-tab" onclick="scrollToCategory('pcb')">PCB 设备</button>
             </div>
 
-            <!-- 产品网格 -->
-            <div class="products-grid">
-                <!-- 产品 1 -->
-                <div class="product-card">
-                    <div class="product-image">真空焊接炉图片</div>
-                    <div class="product-info">
-                        <div class="product-model">RS 系列</div>
-                        <h3 class="product-title">真空回流焊炉</h3>
-                        <p class="product-desc">高精密真空共晶焊接，空洞率&lt;1%，适用于 IGBT、SiC 功率模块封装</p>
-                        <div class="product-features">
-                            <span class="feature-tag">真空度 10⁻³mbar</span>
-                            <span class="feature-tag">空洞率&lt;1%</span>
-                            <span class="feature-tag">氮气保护</span>
-                        </div>
-                        <a href="/products/vacuum-soldering/" class="product-link">了解详情 →</a>
+            <!-- 半导体设备 -->
+            <div id="semiconductor" class="category-section">
+                <h2 class="category-title">半导体设备</h2>
+                <div class="subcategory-grid">
+                    <!-- 亚微米贴片机 -->
+                    <div class="subcategory-card">
+                        <div class="subcategory-icon">🎯</div>
+                        <h3 class="subcategory-title">亚微米贴片机</h3>
+                        <ul class="product-list">
+                            <li><a href="/products/die-bonder/db-series/">DB 系列</a></li>
+                            <li><a href="/products/die-bonder/t8w-series/">T8W 系列</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- TCB 热压键合机 -->
+                    <div class="subcategory-card">
+                        <div class="subcategory-icon">🔥</div>
+                        <h3 class="subcategory-title">TCB 热压键合机</h3>
+                        <ul class="product-list">
+                            <li><a href="/products/tcb/tcb100/">TCB100</a></li>
+                            <li><a href="/products/tcb/tcb200/">TCB200</a></li>
+                            <li><a href="/products/tcb/tcb220/">TCB220</a></li>
+                            <li><a href="/products/tcb/tcb300/">TCB300</a></li>
+                            <li><a href="/products/tcb/tcb350/">TCB350</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- 真空共晶炉 -->
+                    <div class="subcategory-card">
+                        <div class="subcategory-icon">⚡</div>
+                        <h3 class="subcategory-title">真空共晶炉</h3>
+                        <ul class="product-list">
+                            <li><a href="/products/vacuum-eutectic/ts-series/">TS 台式系列</a></li>
+                            <li><a href="/products/vacuum-eutectic/ns-series/">NS 氮气系列</a></li>
+                            <li><a href="/products/vacuum-eutectic/rs-series/">RS 石墨热板水冷系列</a></li>
+                            <li><a href="/products/vacuum-eutectic/vxd-series/">VXD 热冷分离系列</a></li>
+                            <li><a href="/products/vacuum-eutectic/ds-series/">DS 抽屉式系列</a></li>
+                            <li><a href="/products/vacuum-eutectic/cs-series/">CS 极速降温系列</a></li>
+                            <li><a href="/products/vacuum-eutectic/ms-series/">MS 金属热板系列</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- 高真空共晶炉 -->
+                    <div class="subcategory-card">
+                        <div class="subcategory-icon">💎</div>
+                        <h3 class="subcategory-title">高真空共晶炉</h3>
+                        <ul class="product-list">
+                            <li><a href="/products/high-vacuum/hv-series/">HV 系列</a></li>
+                            <li><a href="/products/high-vacuum/vh-series/">VH 系列</a></li>
+                            <li><a href="/products/high-vacuum/shv-series/">SHV 系列</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- 真空回流炉 -->
+                    <div class="subcategory-card">
+                        <div class="subcategory-icon">🔄</div>
+                        <h3 class="subcategory-title">真空回流炉</h3>
+                        <ul class="product-list">
+                            <li><a href="/products/vacuum-reflow/v8-series/">V8 板式系列</a></li>
+                            <li><a href="/products/vacuum-reflow/vr-series/">VR 氮气链式系列</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- 真空甲酸炉 -->
+                    <div class="subcategory-card">
+                        <div class="subcategory-icon">🧪</div>
+                        <h3 class="subcategory-title">真空甲酸炉</h3>
+                        <ul class="product-list">
+                            <li><a href="/products/formic-acid/v3d-series/">V3D/V4D/V5D 系列</a></li>
+                            <li><a href="/products/formic-acid/vx-series/">VX 在线式系列</a></li>
+                            <li><a href="/products/formic-acid/vf-series/">VF 多腔系列</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- 真空退火炉 -->
+                    <div class="subcategory-card">
+                        <div class="subcategory-icon">🌡️</div>
+                        <h3 class="subcategory-title">真空退火炉</h3>
+                        <ul class="product-list">
+                            <li><a href="/products/annealing/rtp-series/">RTP 系列</a></li>
+                            <li><a href="/products/annealing/hrtp-series/">HRTP 高真空系列</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- 真空烧结炉 -->
+                    <div class="subcategory-card">
+                        <div class="subcategory-icon">🔶</div>
+                        <h3 class="subcategory-title">真空烧结炉</h3>
+                        <ul class="product-list">
+                            <li><a href="/products/sintering/pco-series/">PCO 氮气压力系列</a></li>
+                            <li><a href="/products/sintering/sin-series/">SIN 银烧结/铜烧结系列</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- 真空除气炉 -->
+                    <div class="subcategory-card">
+                        <div class="subcategory-icon">💨</div>
+                        <h3 class="subcategory-title">真空除气炉</h3>
+                        <ul class="product-list">
+                            <li><a href="/products/degassing/vdf180d/">VDF180D</a></li>
+                            <li><a href="/products/degassing/vdf200/">VDF200</a></li>
+                            <li><a href="/products/degassing/vdf500/">VDF500</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- 其它半导体设备 -->
+                    <div class="subcategory-card">
+                        <div class="subcategory-icon">🔧</div>
+                        <h3 class="subcategory-title">其它半导体设备</h3>
+                        <ul class="product-list">
+                            <li><a href="/products/other/spin-coater/">匀胶机</a></li>
+                            <li><a href="/products/other/dicing-saw/">划片机</a></li>
+                            <li><a href="/products/other/cleaner/">清洗机</a></li>
+                            <li><a href="/products/other/diffusion-furnace/">扩散炉</a></li>
+                        </ul>
                     </div>
                 </div>
+            </div>
 
-                <!-- 产品 2 -->
-                <div class="product-card">
-                    <div class="product-image">高精密粘片机图片</div>
-                    <div class="product-info">
-                        <div class="product-model">X-DIE 系列</div>
-                        <h3 class="product-title">高精密粘片机</h3>
-                        <p class="product-desc">亚微米级贴装精度，支持多种芯片尺寸，广泛应用于 MEMS、传感器封装</p>
-                        <div class="product-features">
-                            <span class="feature-tag">精度±0.5μm</span>
-                            <span class="feature-tag">UPH 3000+</span>
-                            <span class="feature-tag">视觉对位</span>
-                        </div>
-                        <a href="/products/die-bonder/" class="product-link">了解详情 →</a>
+            <!-- SMT 设备 -->
+            <div id="smt" class="category-section">
+                <h2 class="category-title">SMT 设备</h2>
+                <div class="subcategory-grid">
+                    <div class="subcategory-card">
+                        <div class="subcategory-icon">📋</div>
+                        <h3 class="subcategory-title">SMT 设备分类</h3>
+                        <p style="color: #666; margin-top: 15px;">分类规划中，敬请期待...</p>
                     </div>
                 </div>
+            </div>
 
-                <!-- 产品 3 -->
-                <div class="product-card">
-                    <div class="product-image">纳米银烧结炉图片</div>
-                    <div class="product-info">
-                        <div class="product-model">X-SIN 系列</div>
-                        <h3 class="product-title">纳米银烧结炉</h3>
-                        <p class="product-desc">新一代无铅焊接技术，高温高可靠性，满足车规级、航天级要求</p>
-                        <div class="product-features">
-                            <span class="feature-tag">烧结温度 250°C</span>
-                            <span class="feature-tag">压力 5-40MPa</span>
-                            <span class="feature-tag">无铅环保</span>
-                        </div>
-                        <a href="/products/silver-sintering/" class="product-link">了解详情 →</a>
-                    </div>
-                </div>
-
-                <!-- 产品 4 -->
-                <div class="product-card">
-                    <div class="product-image">真空共晶炉图片</div>
-                    <div class="product-info">
-                        <div class="product-model">VC 系列</div>
-                        <h3 class="product-title">真空共晶炉</h3>
-                        <p class="product-desc">适用于大面积芯片焊接，温度均匀性±1°C，良率&gt;99.5%</p>
-                        <div class="product-features">
-                            <span class="feature-tag">均匀性±1°C</span>
-                            <span class="feature-tag">良率&gt;99.5%</span>
-                            <span class="feature-tag">自动上下料</span>
-                        </div>
-                        <a href="/products/vacuum-eutectic/" class="product-link">了解详情 →</a>
-                    </div>
-                </div>
-
-                <!-- 产品 5 -->
-                <div class="product-card">
-                    <div class="product-image">甲酸回流焊图片</div>
-                    <div class="product-info">
-                        <div class="product-model">FA 系列</div>
-                        <h3 class="product-title">甲酸回流焊炉</h3>
-                        <p class="product-desc">无氧化焊接工艺，适用于功率器件封装，空洞率极低</p>
-                        <div class="product-features">
-                            <span class="feature-tag">无氧化工艺</span>
-                            <span class="feature-tag">空洞率&lt;3%</span>
-                            <span class="feature-tag">环保安全</span>
-                        </div>
-                        <a href="/products/formic-acid/" class="product-link">了解详情 →</a>
-                    </div>
-                </div>
-
-                <!-- 产品 6 -->
-                <div class="product-card">
-                    <div class="product-image">晶圆键合机图片</div>
-                    <div class="product-info">
-                        <div class="product-model">WB 系列</div>
-                        <h3 class="product-title">晶圆键合机</h3>
-                        <p class="product-desc">高精度晶圆对位键合，适用于 MEMS、3D 封装等先进工艺</p>
-                        <div class="product-features">
-                            <span class="feature-tag">对位精度&lt;1μm</span>
-                            <span class="feature-tag">支持 8"12"</span>
-                            <span class="feature-tag">多种键合工艺</span>
-                        </div>
-                        <a href="/products/wafer-bonder/" class="product-link">了解详情 →</a>
+            <!-- PCB 设备 -->
+            <div id="pcb" class="category-section">
+                <h2 class="category-title">PCB 设备</h2>
+                <div class="subcategory-grid">
+                    <div class="subcategory-card">
+                        <div class="subcategory-icon">📋</div>
+                        <h3 class="subcategory-title">PCB 设备分类</h3>
+                        <p style="color: #666; margin-top: 15px;">分类规划中，敬请期待...</p>
                     </div>
                 </div>
             </div>
@@ -307,5 +365,12 @@
     </footer>
 
     <script src="/js/main.js"></script>
+    <script>
+        function scrollToCategory(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+            document.querySelectorAll('.category-tab').forEach(tab => tab.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+    </script>
 </body>
 </html>
