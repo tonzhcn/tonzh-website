@@ -1,0 +1,22 @@
+# 中科同志科技 - 新闻自动更新 Cron 配置
+
+# 编辑方法：
+# 1. 运行 crontab -e
+# 2. 粘贴以下内容
+# 3. 保存退出
+
+# 环境变量
+SHELL=/bin/bash
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+# 新闻自动更新任务
+# 行业动态：每天 09:00, 15:00
+0 9 * * * cd /home/admin/.openclaw/workspace/tonzh-website && python3 scripts/news_auto_update.py >> logs/news_update.log 2>&1
+0 15 * * * cd /home/admin/.openclaw/workspace/tonzh-website && python3 scripts/news_auto_update.py >> logs/news_update.log 2>&1
+
+# 技术动态：每天 11:00, 20:00
+0 11 * * * cd /home/admin/.openclaw/workspace/tonzh-website && python3 scripts/news_auto_update.py >> logs/news_update.log 2>&1
+0 20 * * * cd /home/admin/.openclaw/workspace/tonzh-website && python3 scripts/news_auto_update.py >> logs/news_update.log 2>&1
+
+# 每周清理日志（保留最近 30 天）
+0 2 * * 0 find /home/admin/.openclaw/workspace/tonzh-website/logs -name "*.log" -mtime +30 -delete
