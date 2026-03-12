@@ -236,6 +236,15 @@ def main():
     
     print(f"\n✓ 新闻更新完成，共 {len(existing_news)} 条新闻")
     print(f"新闻文件：{NEWS_FILE}")
+    
+    # 自动同步到服务器
+    print("\n开始同步到服务器...")
+    import subprocess
+    sync_script = os.path.join(os.path.dirname(__file__), 'sync_to_server.sh')
+    result = subprocess.run(['bash', sync_script], capture_output=True, text=True)
+    print(result.stdout)
+    if result.returncode != 0:
+        print(f"同步失败：{result.stderr}")
 
 
 if __name__ == "__main__":

@@ -50,8 +50,9 @@ function loadNewsList() {
     const newsList = document.getElementById('news-list');
     if (!newsList) return;
 
-    // 从 CMS 数据文件加载新闻
-    fetch('/admin/news.json')
+    // 从 admin/news.json 加载新闻（带时间戳避免缓存）
+    const timestamp = new Date().getTime();
+    fetch('/admin/news.json?t=' + timestamp)
         .then(response => {
             if (!response.ok) throw new Error('Network response was not ok');
             return response.json();
@@ -60,7 +61,7 @@ function loadNewsList() {
             displayNews(news.slice(0, 3), newsList);
         })
         .catch(error => {
-            console.log('加载新闻失败，显示示例内容');
+            console.log('加载新闻失败:', error);
             displaySampleNews(newsList);
         });
 }
