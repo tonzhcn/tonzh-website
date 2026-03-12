@@ -1,0 +1,56 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/news"
+public_folder: "/images/news"
+
+collections:
+  - name: "news"
+    label: "新闻动态"
+    folder: "news/_posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "标题", name: "title", widget: "string"}
+      - {label: "发布日期", name: "date", widget: "datetime"}
+      - {label: "分类", name: "category", widget: "select", options: ["行业动态", "技术动态", "公司新闻"]}
+      - {label: "摘要", name: "excerpt", widget: "text"}
+      - {label: "封面图片", name: "image", widget: "image", required: false}
+      - {label: "正文内容", name: "body", widget: "markdown"}
+      - {label: "SEO 关键词", name: "keywords", widget: "string", required: false}
+      - {label: "作者", name: "author", widget: "string", required: false}
+
+  - name: "products"
+    label: "产品信息"
+    folder: "products/_posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "产品名称", name: "title", widget: "string"}
+      - {label: "产品型号", name: "model", widget: "string"}
+      - {label: "产品图片", name: "image", widget: "image"}
+      - {label: "核心价值", name: "value_proposition", widget: "text"}
+      - {label: "技术参数", name: "specs", widget: "object"}
+      - {label: "产品特点", name: "features", widget: "list"}
+      - {label: "应用领域", name: "applications", widget: "list"}
+      - {label: "详细介绍", name: "body", widget: "markdown"}
+
+  - name: "pages"
+    label: "单页内容"
+    files:
+      - file: "about/index.md"
+        label: "关于我们"
+        name: "about"
+        fields:
+          - {label: "标题", name: "title", widget: "string"}
+          - {label: "正文内容", name: "body", widget: "markdown"}
+      - file: "contact/index.md"
+        label: "联系我们"
+        name: "contact"
+        fields:
+          - {label: "标题", name: "title", widget: "string"}
+          - {label: "联系电话", name: "phone", widget: "string"}
+          - {label: "联系邮箱", name: "email", widget: "string"}
+          - {label: "公司地址", name: "address", widget: "text"}
+          - {label: "正文内容", name: "body", widget: "markdown"}

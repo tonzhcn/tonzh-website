@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="中科同志科技产品中心 - 真空焊接炉、高精密粘片机、纳米银烧结炉等半导体封装设备">
+    <title>产品中心 - 中科同志科技（TORCH）</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #0056B3 0%, #003366 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+        .page-header h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .page-header p {
+            font-size: 20px;
+            opacity: 0.9;
+        }
+        .products-section {
+            padding: 80px 0;
+        }
+        .product-filter {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            padding: 10px 25px;
+            border: 2px solid #0056B3;
+            background: white;
+            color: #0056B3;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: #0056B3;
+            color: white;
+        }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        .product-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        .product-card:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+        .product-image {
+            height: 220px;
+            background: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: #999;
+        }
+        .product-info {
+            padding: 25px;
+        }
+        .product-model {
+            font-size: 14px;
+            color: #D4AF37;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .product-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #333;
+        }
+        .product-desc {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .product-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        .feature-tag {
+            padding: 4px 12px;
+            background: #f0f0f0;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #666;
+        }
+        .product-link {
+            display: inline-block;
+            color: #0056B3;
+            font-weight: 600;
+        }
+        .product-link:hover {
+            color: #003366;
+        }
+        .cta-section {
+            background: #f5f5f5;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .cta-section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        .cta-section p {
+            color: #666;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-text" style="display:block">TORCH 中科同志</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="/">首页</a></li>
+                <li><a href="/about/">关于我们</a></li>
+                <li><a href="/products/" class="active">产品中心</a></li>
+                <li><a href="/applications/">技术应用</a></li>
+                <li><a href="/news/">新闻动态</a></li>
+                <li><a href="/resources/">资源下载</a></li>
+                <li><a href="/contact/">联系我们</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 页面头部 -->
+    <section class="page-header">
+        <div class="container">
+            <h1>产品中心</h1>
+            <p>半导体特种封装设备全系列产品</p>
+        </div>
+    </section>
+
+    <!-- 产品列表 -->
+    <section class="products-section">
+        <div class="container">
+            <!-- 筛选器 -->
+            <div class="product-filter">
+                <button class="filter-btn active">全部产品</button>
+                <button class="filter-btn">真空焊接炉</button>
+                <button class="filter-btn">贴片机</button>
+                <button class="filter-btn">烧结炉</button>
+            </div>
+
+            <!-- 产品网格 -->
+            <div class="products-grid">
+                <!-- 产品 1 -->
+                <div class="product-card">
+                    <div class="product-image">真空焊接炉图片</div>
+                    <div class="product-info">
+                        <div class="product-model">RS 系列</div>
+                        <h3 class="product-title">真空回流焊炉</h3>
+                        <p class="product-desc">高精密真空共晶焊接，空洞率&lt;1%，适用于 IGBT、SiC 功率模块封装</p>
+                        <div class="product-features">
+                            <span class="feature-tag">真空度 10⁻³mbar</span>
+                            <span class="feature-tag">空洞率&lt;1%</span>
+                            <span class="feature-tag">氮气保护</span>
+                        </div>
+                        <a href="/products/vacuum-soldering/" class="product-link">了解详情 →</a>
+                    </div>
+                </div>
+
+                <!-- 产品 2 -->
+                <div class="product-card">
+                    <div class="product-image">高精密粘片机图片</div>
+                    <div class="product-info">
+                        <div class="product-model">X-DIE 系列</div>
+                        <h3 class="product-title">高精密粘片机</h3>
+                        <p class="product-desc">亚微米级贴装精度，支持多种芯片尺寸，广泛应用于 MEMS、传感器封装</p>
+                        <div class="product-features">
+                            <span class="feature-tag">精度±0.5μm</span>
+                            <span class="feature-tag">UPH 3000+</span>
+                            <span class="feature-tag">视觉对位</span>
+                        </div>
+                        <a href="/products/die-bonder/" class="product-link">了解详情 →</a>
+                    </div>
+                </div>
+
+                <!-- 产品 3 -->
+                <div class="product-card">
+                    <div class="product-image">纳米银烧结炉图片</div>
+                    <div class="product-info">
+                        <div class="product-model">X-SIN 系列</div>
+                        <h3 class="product-title">纳米银烧结炉</h3>
+                        <p class="product-desc">新一代无铅焊接技术，高温高可靠性，满足车规级、航天级要求</p>
+                        <div class="product-features">
+                            <span class="feature-tag">烧结温度 250°C</span>
+                            <span class="feature-tag">压力 5-40MPa</span>
+                            <span class="feature-tag">无铅环保</span>
+                        </div>
+                        <a href="/products/silver-sintering/" class="product-link">了解详情 →</a>
+                    </div>
+                </div>
+
+                <!-- 产品 4 -->
+                <div class="product-card">
+                    <div class="product-image">真空共晶炉图片</div>
+                    <div class="product-info">
+                        <div class="product-model">VC 系列</div>
+                        <h3 class="product-title">真空共晶炉</h3>
+                        <p class="product-desc">适用于大面积芯片焊接，温度均匀性±1°C，良率&gt;99.5%</p>
+                        <div class="product-features">
+                            <span class="feature-tag">均匀性±1°C</span>
+                            <span class="feature-tag">良率&gt;99.5%</span>
+                            <span class="feature-tag">自动上下料</span>
+                        </div>
+                        <a href="/products/vacuum-eutectic/" class="product-link">了解详情 →</a>
+                    </div>
+                </div>
+
+                <!-- 产品 5 -->
+                <div class="product-card">
+                    <div class="product-image">甲酸回流焊图片</div>
+                    <div class="product-info">
+                        <div class="product-model">FA 系列</div>
+                        <h3 class="product-title">甲酸回流焊炉</h3>
+                        <p class="product-desc">无氧化焊接工艺，适用于功率器件封装，空洞率极低</p>
+                        <div class="product-features">
+                            <span class="feature-tag">无氧化工艺</span>
+                            <span class="feature-tag">空洞率&lt;3%</span>
+                            <span class="feature-tag">环保安全</span>
+                        </div>
+                        <a href="/products/formic-acid/" class="product-link">了解详情 →</a>
+                    </div>
+                </div>
+
+                <!-- 产品 6 -->
+                <div class="product-card">
+                    <div class="product-image">晶圆键合机图片</div>
+                    <div class="product-info">
+                        <div class="product-model">WB 系列</div>
+                        <h3 class="product-title">晶圆键合机</h3>
+                        <p class="product-desc">高精度晶圆对位键合，适用于 MEMS、3D 封装等先进工艺</p>
+                        <div class="product-features">
+                            <span class="feature-tag">对位精度&lt;1μm</span>
+                            <span class="feature-tag">支持 8"12"</span>
+                            <span class="feature-tag">多种键合工艺</span>
+                        </div>
+                        <a href="/products/wafer-bonder/" class="product-link">了解详情 →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>需要产品选型建议？</h2>
+            <p>我们的技术专家团队可根据您的工艺需求提供专业选型方案</p>
+            <a href="/contact/" class="btn btn-primary">联系咨询</a>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>关于 TORCH</h4>
+                    <p>中科同志科技股份有限公司，专注半导体特种封装设备近 20 年。</p>
+                </div>
+                <div class="footer-section">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="/products/">产品中心</a></li>
+                        <li><a href="/applications/">技术应用</a></li>
+                        <li><a href="/news/">新闻动态</a></li>
+                        <li><a href="/contact/">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>📍 北京市通州区联东 U 谷科技园中区景盛南四街 15 号</li>
+                        <li>📞 400-998-9522</li>
+                        <li>📧 sales@tonzh.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 中科同志科技股份有限公司 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
