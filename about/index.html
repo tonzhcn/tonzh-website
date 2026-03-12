@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="中科同志科技股份有限公司（TORCH）- 国家级专精特新'小巨人'企业，专注半导体特种封装设备近 20 年。">
+    <meta name="description" content="中科同志科技股份有限公司 - 国家级专精特新'小巨人'企业，专注特种封装焊接与先进封装设备领域">
+    <meta name="keywords" content="中科同志，TORCH，真空共晶炉，亚微米贴片机，半导体封装设备，IGBT 封装，SiC 封装">
     <title>关于我们 - 中科同志科技（TORCH）</title>
     <link rel="stylesheet" href="/css/style.css">
     <style>
@@ -24,53 +25,159 @@
         .about-section {
             padding: 80px 0;
         }
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-        .about-text h2 {
-            font-size: 32px;
-            margin-bottom: 20px;
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
             color: #0056B3;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #0056B3;
         }
-        .about-text p {
-            line-height: 1.8;
-            color: #666;
+        .about-content {
+            line-height: 2;
+            color: #333;
+            font-size: 16px;
+        }
+        .about-content p {
+            margin-bottom: 20px;
+            text-indent: 2em;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+            border-left: 4px solid #0056B3;
+            padding: 30px;
+            margin: 40px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .highlight-box h3 {
+            color: #0056B3;
+            font-size: 24px;
             margin-bottom: 20px;
         }
-        .about-image {
-            background: #f5f5f5;
-            height: 400px;
+        .highlight-box p {
+            text-indent: 0;
+            margin-bottom: 15px;
+        }
+        .vision-mission {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin: 40px 0;
+        }
+        .vm-card {
+            background: white;
+            border: 2px solid #0056B3;
             border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            color: #999;
+            padding: 30px;
+            text-align: center;
+        }
+        .vm-card h3 {
+            color: #0056B3;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        .vm-card p {
+            text-indent: 0;
+            color: #666;
+            font-size: 16px;
         }
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 30px;
-            margin-top: 60px;
+            margin: 50px 0;
         }
         .stat-card {
             text-align: center;
             padding: 30px;
-            background: #f5f5f5;
+            background: linear-gradient(135deg, #0056B3 0%, #003366 100%);
             border-radius: 8px;
+            color: white;
         }
         .stat-number {
             font-size: 48px;
             font-weight: 700;
-            color: #0056B3;
             margin-bottom: 10px;
         }
         .stat-label {
             font-size: 16px;
+            opacity: 0.9;
+        }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 40px 0;
+        }
+        .product-category {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 30px;
+            transition: all 0.3s;
+        }
+        .product-category:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-color: #0056B3;
+        }
+        .product-category h3 {
+            color: #0056B3;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        .product-category ul {
+            list-style: none;
+            padding: 0;
+        }
+        .product-category li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
             color: #666;
+        }
+        .product-category li:last-child {
+            border-bottom: none;
+        }
+        .advantages-list {
+            list-style: none;
+            padding: 0;
+        }
+        .advantages-list li {
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border-left: 4px solid #D4AF37;
+        }
+        .advantages-list li strong {
+            color: #0056B3;
+        }
+        .brands-section {
+            background: linear-gradient(135deg, #0056B3 0%, #003366 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            max-width: 800px;
+            margin: 40px auto 0;
+        }
+        .brand-card {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+        .brand-card h3 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            color: #D4AF37;
+        }
+        .brand-card p {
+            opacity: 0.9;
+            text-indent: 0;
         }
         .timeline {
             padding: 80px 0;
@@ -107,6 +214,15 @@
         .timeline-content p {
             color: #666;
             line-height: 1.6;
+            text-indent: 0;
+        }
+        @media (max-width: 992px) {
+            .vision-mission,
+            .stats-grid,
+            .products-grid,
+            .brands-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -133,87 +249,149 @@
     <section class="page-header">
         <div class="container">
             <h1>关于我们</h1>
-            <p>专注半导体特种封装设备近 20 年</p>
+            <p>专注特种封装焊接与先进封装设备领域</p>
         </div>
     </section>
 
     <!-- 公司简介 -->
     <section class="about-section">
         <div class="container">
+            <h2 class="section-title">公司简介</h2>
             <div class="about-content">
-                <div class="about-text">
-                    <h2>公司简介</h2>
-                    <p>中科同志科技股份有限公司（TORCH）成立于 2016 年 9 月 19 日，总部位于北京市通州区联东 U 谷科技园。作为国家级专精特新"小巨人"企业，我们在半导体特种封装设备领域深耕近 20 年，拥有超过 258 项专利技术。</p>
-                    <p>公司核心技术包括亚微米贴片和高真空焊接技术，主要产品涵盖真空焊接炉、高精密粘片机、纳米银正压烧结炉等，广泛应用于 IGBT 模块、MEMS 封装、红外芯片、原子钟、航天航空等领域。</p>
-                    <p>我们的企业使命是解决中国在高端芯片制造领域的"卡脖子"问题，为国产半导体设备自主可控贡献力量。</p>
+                <p>中科同志是一家专注于特种封装焊接与先进封装设备领域的<strong>国家级高新技术企业</strong>。公司以<strong>"成为地球上特种封装焊接领域最受人尊敬的企业"</strong>为愿景，秉持<strong>"同心协力、众志成城、科技立身、产业报国"</strong>的精神，坚持<strong>"踏踏实实做事，老老实实做人"</strong>的理念，致力于为高端制造提供核心装备与整体解决方案。</p>
+                
+                <div class="vision-mission">
+                    <div class="vm-card">
+                        <h3>🎯 企业愿景</h3>
+                        <p>成为地球上特种封装焊接领域最受人尊敬的企业</p>
+                    </div>
+                    <div class="vm-card">
+                        <h3>💡 企业精神</h3>
+                        <p>同心协力、众志成城、科技立身、产业报国</p>
+                    </div>
                 </div>
-                <div class="about-image">
-                    公司大楼/团队照片
+
+                <p>公司旗下拥有<strong>"TORCH"</strong>和<strong>"TERMWAY"</strong>两大品牌，分别致力于提供一流的真空封装解决方案和打造全球领先的先进封装贴片设备。</p>
+            </div>
+
+            <!-- 品牌介绍 -->
+            <div class="brands-section">
+                <div class="container">
+                    <h2 style="color: white; margin-bottom: 10px;">旗下品牌</h2>
+                    <div class="brands-grid">
+                        <div class="brand-card">
+                            <h3>TORCH</h3>
+                            <p>提供一流的真空封装解决方案</p>
+                        </div>
+                        <div class="brand-card">
+                            <h3>TERMWAY</h3>
+                            <p>打造全球领先的先进封装贴片设备</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <!-- 核心数据 -->
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-number">20+</div>
-                    <div class="stat-label">年行业经验</div>
+                    <div class="stat-number">250+</div>
+                    <div class="stat-label">累计申请专利</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">258+</div>
-                    <div class="stat-label">专利技术</div>
+                    <div class="stat-number">62+</div>
+                    <div class="stat-label">授权发明专利</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">500+</div>
-                    <div class="stat-label">服务客户</div>
+                    <div class="stat-number">200+</div>
+                    <div class="stat-label">实用新型及外观专利</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">99%</div>
-                    <div class="stat-label">客户满意度</div>
+                    <div class="stat-number">4+</div>
+                    <div class="stat-label">研发制造基地</div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- 发展历程 -->
-    <section class="timeline">
-        <div class="container">
-            <h2 class="section-title">发展历程</h2>
-            <div style="max-width: 800px; margin: 0 auto;">
-                <div class="timeline-item">
-                    <div class="timeline-year">2016</div>
-                    <div class="timeline-content">
-                        <h3>公司成立</h3>
-                        <p>中科同志科技股份有限公司在北京成立，开始专注半导体封装设备研发</p>
-                    </div>
+            <!-- 核心资质 -->
+            <div class="highlight-box">
+                <h3>🏆 核心资质与荣誉</h3>
+                <p>• <strong>国家级专精特新"小巨人"企业</strong></p>
+                <p>• <strong>国家知识产权示范企业</strong></p>
+                <p>• <strong>国家火炬计划产业化示范项目</strong></p>
+                <p>• <strong>北京市知识产权示范企业</strong></p>
+                <p>• 2020 年"半导体芯片真空封装设备与亚微米共晶贴片装备"项目荣获<strong>"创客中国"创新创业大赛全国决赛二等奖</strong></p>
+            </div>
+
+            <!-- 技术实力 -->
+            <h2 class="section-title" style="margin-top: 60px;">技术实力与知识产权</h2>
+            <div class="about-content">
+                <p>公司拥有完全自主知识产权，确保产品无专利风险。截至最新数据，已累计申请专利超<strong>250 项</strong>，其中授权发明专利<strong>62 项</strong>，实用新型及外观专利超<strong>200 项</strong>，并拥有多项软件著作权。</p>
+            </div>
+
+            <!-- 产品体系 -->
+            <h2 class="section-title" style="margin-top: 60px;">业务与产品体系</h2>
+            <div class="products-grid">
+                <div class="product-category">
+                    <h3>🔹 泛半导体真空封装设备</h3>
+                    <ul>
+                        <li>真空共晶炉</li>
+                        <li>高真空共晶炉</li>
+                        <li>热/电激活真空炉</li>
+                        <li>真空等离子清洗机</li>
+                        <li>正压固化炉</li>
+                        <li>亚微米倒装共晶贴片机</li>
+                    </ul>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2018</div>
-                    <div class="timeline-content">
-                        <h3>技术突破</h3>
-                        <p>亚微米贴片技术取得重大突破，获得多项核心专利</p>
-                    </div>
+                <div class="product-category">
+                    <h3>⚡ 功率半导体封装设备</h3>
+                    <ul>
+                        <li>IGBT/SiC 贴片设备</li>
+                        <li>真空甲酸炉</li>
+                        <li>真空银烧结/铜烧结设备</li>
+                        <li>真空回流炉</li>
+                        <li>车规级功率模块全套封装解决方案</li>
+                    </ul>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2020</div>
-                    <div class="timeline-content">
-                        <h3>国家级"小巨人"</h3>
-                        <p>荣获国家级专精特新"小巨人"企业认定</p>
-                    </div>
+                <div class="product-category">
+                    <h3>🚀 先进封装设备</h3>
+                    <ul>
+                        <li>晶圆凸点回流（Bumping Reflow）设备</li>
+                        <li>TCB 热压键合系统</li>
+                        <li>晶圆键合机</li>
+                        <li>芯片堆叠系统</li>
+                        <li>面向 2.5D/3D 集成等前沿封装市场</li>
+                    </ul>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2023</div>
-                    <div class="timeline-content">
-                        <h3>纳米银烧结量产</h3>
-                        <p>纳米银正压烧结炉实现量产，填补国内空白</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2026</div>
-                    <div class="timeline-content">
-                        <h3>持续创新</h3>
-                        <p>拥有超过 258 项专利，服务 500+ 客户，成为行业领导者</p>
-                    </div>
-                </div>
+            </div>
+
+            <!-- 核心优势 -->
+            <h2 class="section-title" style="margin-top: 60px;">核心优势与突破</h2>
+            <div class="about-content">
+                <p>公司多项技术打破国外垄断，实现国产替代：</p>
+                <ul class="advantages-list">
+                    <li><strong>国内首家</strong>提供 SiC 模块封装全套解决方案</li>
+                    <li><strong>国内唯一</strong>供应红外探测、陀螺仪、原子钟、MEMS 器件用热激活真空炉的企业</li>
+                    <li>高真空共晶炉真空度最高可达<strong>10⁻⁶Pa</strong>，优于主流进口设备</li>
+                    <li><strong>国内唯一</strong>亚微米共晶贴片机，贴片精度达<strong>±0.5μm</strong></li>
+                    <li>成功开发<strong>国内首台</strong>大尺寸芯片（70×70mm）TCB 热压键合设备，解决"卡脖子"问题</li>
+                </ul>
+            </div>
+
+            <!-- 服务行业 -->
+            <h2 class="section-title" style="margin-top: 60px;">服务行业</h2>
+            <div class="highlight-box" style="border-left-color: #D4AF37; background: linear-gradient(135deg, #fffef5 0%, #fff9e6 100%);">
+                <p>产品广泛应用于：<strong>军工、功率半导体（IGBT/SiC）、新能源汽车、高功率激光器、光通讯、UVLED/MiniLED、通用芯片框架封装、晶圆厂与先进封装厂、研究院所</strong>等多个高端领域。</p>
+            </div>
+
+            <!-- 生产基地 -->
+            <h2 class="section-title" style="margin-top: 60px;">生产基地与旗下公司</h2>
+            <div class="about-content">
+                <p>公司拥有<strong>北京（顺义、朝阳、亦庄）</strong>和<strong>江苏泰兴</strong>多个研发与制造基地，形成完善的研发、生产、销售和服务体系。</p>
+            </div>
+
+            <!-- 企业使命 -->
+            <div class="highlight-box" style="background: linear-gradient(135deg, #0056B3 0%, #003366 100%); color: white; border-left-color: #D4AF37;">
+                <h3 style="color: #D4AF37;">🎯 企业使命</h3>
+                <p style="font-size: 18px; text-indent: 0;">中科同志始终以助力打造<strong>"中国芯"</strong>为己任，通过持续的技术创新与可靠的装备，推动中国半导体封装产业的自主化与高质量发展。</p>
             </div>
         </div>
     </section>
@@ -224,7 +402,7 @@
             <div class="footer-grid">
                 <div class="footer-section">
                     <h4>关于 TORCH</h4>
-                    <p>中科同志科技股份有限公司，专注半导体特种封装设备近 20 年，致力于解决中国在高端芯片制造领域的"卡脖子"问题。</p>
+                    <p>中科同志科技股份有限公司，专注半导体特种封装设备近 20 年。</p>
                 </div>
                 <div class="footer-section">
                     <h4>快速链接</h4>
@@ -245,7 +423,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 中科同志科技股份有限公司 版权所有 | 京 ICP 备 XXXXXXXX 号</p>
+                <p>&copy; 2026 中科同志科技股份有限公司 版权所有</p>
             </div>
         </div>
     </footer>
