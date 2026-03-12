@@ -6,12 +6,12 @@
 
 1. 访问 [https://github.com](https://github.com)
 2. 点击 "Sign up" 按钮
-3. 输入邮箱：`sales@tonzh.com`
+3. 输入邮箱：`sales@aiauto.tonzh.cn`
 4. 设置密码（建议 12 位以上，包含大小写字母和数字）
 5. 输入用户名：建议 `tonzh-tech` 或 `torch-semi`
 6. 输入手机号：`13701314315`，接收验证码
 7. 完成人机验证
-8. 验证邮箱（GitHub 会发送验证邮件到 sales@tonzh.com）
+8. 验证邮箱（GitHub 会发送验证邮件到 sales@aiauto.tonzh.cn）
 
 **注册完成后，告诉我您的 GitHub 用户名**，我会把代码上传到仓库。
 
@@ -50,7 +50,7 @@
 
 1. 在项目页面，点击 "Settings" → "Domains"
 2. 点击 "Add" 按钮
-3. 输入域名：`www.tonzh.com`
+3. 输入域名：`aiauto.tonzh.cn`
 4. 点击 "Add"
 5. Vercel 会显示 DNS 配置要求
 
@@ -60,7 +60,7 @@
 
 1. 登录 [阿里云控制台](https://console.aliyun.com)
 2. 进入 "域名与网站" → "域名"
-3. 找到 `tonzh.com`，点击 "解析"
+3. 找到 `aiauto.tonzh.cn`，点击 "解析"
 4. 添加 DNS 记录：
 
 | 记录类型 | 主机记录 | 记录值 | TTL |
@@ -77,7 +77,7 @@
 
 网站部署完成后，配置内容管理后台：
 
-1. 访问 `https://www.tonzh.com/admin/`
+1. 访问 `https://aiauto.tonzh.cn/admin/`
 2. 首次访问会提示授权 GitHub
 3. 点击 "Authorize with GitHub"
 4. 选择允许访问 `tonzh-website` 仓库
@@ -108,7 +108,7 @@
 
 **推荐方案：Formspree**
 1. 访问 [https://formspree.io](https://formspree.io)
-2. 注册账号（用 sales@tonzh.com）
+2. 注册账号（用 sales@aiauto.tonzh.cn）
 3. 创建新表单，获取表单 ID
 4. 修改 `contact/index.html` 中的表单 action
 
@@ -116,7 +116,7 @@
 
 **百度统计：**
 1. 访问 [https://tongji.baidu.com](https://tongji.baidu.com)
-2. 注册并添加网站 `www.tonzh.com`
+2. 注册并添加网站 `aiauto.tonzh.cn`
 3. 获取统计代码
 4. 将代码添加到所有页面的 `<head>` 标签内
 
@@ -125,7 +125,7 @@
 ## 常见问题
 
 ### Q: DNS 配置后多久生效？
-A: 通常 5-30 分钟，最长可能 24 小时。可以用 `ping www.tonzh.com` 检查。
+A: 通常 5-30 分钟，最长可能 24 小时。可以用 `ping aiauto.tonzh.cn` 检查。
 
 ### Q: CMS 后台无法登录？
 A: 确保已授权 GitHub 仓库访问权限。检查 `admin/config.yml` 中的仓库配置。

@@ -37,7 +37,7 @@ tonzh-website/
 2. 访问 [vercel.com](https://vercel.com) 并登录
 3. 点击 "New Project"，导入 GitHub 仓库
 4. Vercel 会自动识别并部署
-5. 在 Vercel 设置中绑定域名 `www.tonzh.com`
+5. 在 Vercel 设置中绑定域名 `aiauto.tonzh.cn`
 
 ### 方式二：GitHub Pages 部署
 
@@ -60,7 +60,7 @@ CNAME   www     your-site.vercel.app (或 GitHub Pages 地址)
 
 ### 首次配置
 
-1. 完成网站部署后，访问 `https://www.tonzh.com/admin/`
+1. 完成网站部署后，访问 `https://aiauto.tonzh.cn/admin/`
 2. 首次访问需要授权 Git 仓库（GitHub/GitLab）
 3. 授权后即可登录后台
 
@@ -101,7 +101,7 @@ CNAME   www     your-site.vercel.app (或 GitHub Pages 地址)
 ## 内容更新流程
 
 ```
-1. 登录 CMS 后台 (www.tonzh.com/admin/)
+1. 登录 CMS 后台 (aiauto.tonzh.cn/admin/)
    ↓
 2. 创建/编辑内容
    ↓
@@ -116,7 +116,7 @@ CNAME   www     your-site.vercel.app (或 GitHub Pages 地址)
 
 - ✅ 联系方式已更新为真实信息
   - 电话：400-998-9522
-  - 邮箱：sales@tonzh.com
+  - 邮箱：sales@aiauto.tonzh.cn
   - 地址：北京市通州区联东 U 谷科技园中区景盛南四街 15 号
 
 ## 后续优化建议
